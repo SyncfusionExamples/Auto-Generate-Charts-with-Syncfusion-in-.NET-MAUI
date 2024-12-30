@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ChartGenerator"
+             xmlns:button="clr-namespace:Syncfusion.Maui.Toolkit.Buttons;assembly=Syncfusion.Maui.Toolkit"
+             x:Class="ChartGenerator.MainPage"
+             Background="{StaticResource backgroundGradient}"
+             >
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <LinearGradientBrush x:Key="backgroundGradient">
+                <GradientStop Color="#FFFFFF" Offset="0"/>
+                <GradientStop Color="#FFCCE6" Offset="1"/>
+            </LinearGradientBrush>
+
+            <LinearGradientBrush x:Key="gradient">
+                <GradientStop Color="#FFFFFF" Offset="0"/>
+                <GradientStop Color="#F5CAE7" Offset="1"/>
+            </LinearGradientBrush>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <local:ChartViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+
+        <Grid VerticalOptions="Center" Padding="20" IsVisible="{Binding LayoutIsVisible}">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            
+            <VerticalStackLayout Spacing="5" Grid.Column="0"
+                  Margin="0,20,0,0" 
+                  VerticalOptions="FillAndExpand"
+                  HorizontalOptions="FillAndExpand">
+                <Label Text="Chart Generator" 
+                       FontSize="32" Grid.Row="0"
+                       HorizontalOptions="Start" 
+                       FontFamily="Lucida Sans Unicode"/>
+                
+                <Editor AutoSize="TextChanges" 
+                        x:Name="entry"  
+                        MinimumHeightRequest="100"
+                        HeightRequest="400"
+                        MaximumHeightRequest="600"
+                        Grid.Row="1"  
+                        Background="White"
+                        PlaceholderColor="#9582C2"
+                        VerticalOptions="Fill" 
+                        HorizontalOptions="FillAndExpand" 
+                        VerticalTextAlignment="Center"
+                        Text="{Binding EntryText}"
+                        Placeholder="Your JSON input goes here..."/>
+
+                <Button x:Name="createButton"  
+                        IsEnabled="True" 
+                        Grid.Row="2"  
+                        CornerRadius="15" 
+                        Text="Create"  
+                        VerticalOptions="Center" 
+                        HorizontalOptions="End" 
+                        Background="#6750A4"
+                        Command="{Binding CreateButtonClicked}"/>
+            </VerticalStackLayout>
+
+            <Grid
+                  Grid.Column="1"
+                  RowSpacing="20" HorizontalOptions="Center" VerticalOptions="Center">
+               
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+
+                <button:SfButton x:Name="barButton"
+                                 Text="Show a column chart of revenue by region."
+                                 Background="#FCE1EC"
+                                 Grid.Row="0" 
+                                 FontSize="17"
+                                 TextColor="Black"
+                                 CornerRadius="10"
+                                 ShowIcon="True"
+                                 ImageAlignment="Left"
+                                 ImageSource="column.png"
+                                 ImageSize="25"
+                                 Padding="10,0"
+                                 HorizontalTextAlignment="Center"
+                                 LineBreakMode="WordWrap"
+                                 Stroke="#E2227E"
+                                 StrokeThickness="3"
+                                 Command="{Binding ButtonClicked}"
+                                 CommandParameter="{Binding Text, Source={x:Reference barButton}}"/>
+                
+                <button:SfButton x:Name="lineButton"
+                                 Text="Display a line chart of product sales over six months."
+                                 Grid.Row="1"
+                                 FontAutoScalingEnabled="True"
+                                 Background="#D7E4FF"
+                                 FontSize="17"
+                                 TextColor="Black"
+                                 CornerRadius="10"
+                                 ShowIcon="True"
+                                 ImageAlignment="Left"
+                                 ImageSource="line.png"
+                                 ImageSize="25"
+                                 Padding="10,0"
+                                 HorizontalTextAlignment="Center"
+                                 LineBreakMode="WordWrap"
+                                 Stroke="#116DF9"
+                                 StrokeThickness="3"
+                                 Command="{Binding ButtonClicked}"
+                                 CommandParameter="{Binding Text, Source={x:Reference lineButton}}"/>
+
+                <button:SfButton x:Name="areaButton"
+                                 Text="Generate an area chart of farm productivity over different seasons."           
+                                 Background="#B3F5CF"
+                                 Grid.Row="2"
+                                 FontSize="17"
+                                 TextColor="Black"
+                                 CornerRadius="10"
+                                 ShowIcon="True"
+                                 ImageAlignment="Left"
+                                 ImageSource="area.png"
+                                 ImageSize="25"
+                                 Padding="10,0"
+                                 HorizontalTextAlignment="Center"
+                                 LineBreakMode="WordWrap"
+                                 Stroke="#00A968"
+                                 StrokeThickness="3"
+                                 Command="{Binding ButtonClicked}"
+                                 CommandParameter="{Binding Text, Source={x:Reference areaButton}}"/>
+
+                <button:SfButton x:Name="pieButton"
+                                 Text="Create a pie chart of monthly sales data."
+                                 Grid.Row="3" 
+                                 Background="#E8CFFF"
+                                 TextColor="Black"
+                                 FontSize="17"
+                                 CornerRadius="10"
+                                 ShowIcon="True"
+                                 ImageAlignment="Left"
+                                 ImageSource="pie.png"
+                                 ImageSize="25"
+                                 Padding="10,0"
+                                 HorizontalTextAlignment="Center"
+                                 LineBreakMode="WordWrap"
+                                 Stroke="#9215F3"
+                                 StrokeThickness="3"
+                                 Command="{Binding ButtonClicked}"
+                                 CommandParameter="{Binding Text, Source={x:Reference pieButton}}"/>
+
+                <button:SfButton x:Name="doughnutButton"
+                                 Text="Prepare a doughnut chart for task completion."
+                                 Grid.Row="4"
+                                 Background="#FFD7D7"
+                                 FontSize="17"
+                                 TextColor="Black"
+                                 CornerRadius="10"
+                                 ShowIcon="True"
+                                 ImageAlignment="Left"
+                                 ImageSource="doughnut.png"
+                                 ImageSize="25"
+                                 Padding="10,0"
+                                 HorizontalTextAlignment="Center"
+                                 LineBreakMode="WordWrap"
+                                 Stroke="#FF4E4E"
+                                 StrokeThickness="3"
+                                 Command="{Binding ButtonClicked}"
+                                 CommandParameter="{Binding Text, Source={x:Reference doughnutButton}}"/>
+
+                <button:SfButton x:Name="splineButton"
+                                 Text="Show a spline chart of daily average temperature for the past week."
+                                 Background="#FFF7C1"
+                                 Grid.Row="5"
+                                 FontSize="17"
+                                 TextColor="Black"
+                                 CornerRadius="10"
+                                 ShowIcon="True"
+                                 ImageAlignment="Left"
+                                 ImageSource="spline.png"
+                                 ImageSize="25"
+                                 Padding="10,0"
+                                 HorizontalTextAlignment="Center"
+                                 LineBreakMode="WordWrap"
+                                 Stroke="#E6BE02"
+                                 StrokeThickness="3"
+                                 Command="{Binding ButtonClicked}"
+                                 CommandParameter="{Binding Text, Source={x:Reference splineButton}}"/>
+            </Grid>
+        
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

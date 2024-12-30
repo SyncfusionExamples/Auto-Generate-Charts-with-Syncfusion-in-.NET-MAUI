@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<chart:SfCartesianChart xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        xmlns:chart="clr-namespace:Syncfusion.Maui.Toolkit.Charts;assembly=Syncfusion.Maui.Toolkit"
+                        xmlns:local="clr-namespace:ChartGenerator"
+                        x:Class="ChartGenerator.CartesianChartExt"
+                        Title="{Binding Title}"
+                        Source="{Binding Series}">
+
+    <chart:SfCartesianChart.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <local:SeriesTemplates />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </chart:SfCartesianChart.Resources>
+
+    <chart:SfCartesianChart.Legend>
+        <chart:ChartLegend Placement="Bottom" ToggleSeriesVisibility="True"/>
+    </chart:SfCartesianChart.Legend>
+
+    <chart:SfCartesianChart.XAxes>
+        <chart:CategoryAxis>
+            <chart:CategoryAxis.Title>
+                <chart:ChartAxisTitle Text="{Binding XAxis.Title}"/>
+            </chart:CategoryAxis.Title>
+        </chart:CategoryAxis>
+    </chart:SfCartesianChart.XAxes>
+
+    <chart:SfCartesianChart.YAxes>
+        <chart:NumericalAxis Minimum="{Binding YAxis.Min}" Maximum="{Binding YAxis.Max}">
+            <chart:NumericalAxis.Title>
+                <chart:ChartAxisTitle Text="{Binding YAxis.Title}" />
+            </chart:NumericalAxis.Title>
+        </chart:NumericalAxis>
+    </chart:SfCartesianChart.YAxes>
+
+</chart:SfCartesianChart>

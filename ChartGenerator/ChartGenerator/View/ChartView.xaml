@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:charts="clr-namespace:Syncfusion.Maui.Toolkit.Charts;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:local="clr-namespace:ChartGenerator"
+             x:Class="ChartGenerator.ChartView">
+
+    <ContentPage.Resources>
+
+        <ResourceDictionary>
+
+            <DataTemplate x:Key="cartesianChartTemplate">
+                <local:CartesianChartExt/>
+            </DataTemplate>
+
+            <DataTemplate x:Key="circularChartTemplate">
+                <local:CircularChartExt/>
+            </DataTemplate>
+
+            <local:ChartTemplateSelector x:Key="chartTemplateSelector" 
+                                         CartesianChartTemplate="{StaticResource cartesianChartTemplate}"
+                                         CircularChartTemplate="{StaticResource circularChartTemplate}" />
+
+            <LinearGradientBrush x:Key="backgroundGradient">
+                <GradientStop Color="#FFFFFF" Offset="0"/>
+                <GradientStop Color="#FFCCE6" Offset="1"/>
+            </LinearGradientBrush>
+
+            <LinearGradientBrush x:Key="strokeGradient"
+                StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="RoyalBlue" Offset="0.0" />
+                <GradientStop Color="#FFD322FF" Offset="1.0" />
+            </LinearGradientBrush>
+
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+
+    <Grid Background="{StaticResource backgroundGradient}">
+
+        <Grid ColumnDefinitions="*,auto">
+
+            <Grid Grid.Column="0">
+                <Border
+                    StrokeThickness="3"
+                    Margin="40" Padding="10"
+                    Stroke="{StaticResource strokeGradient}">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="15" />
+                    </Border.StrokeShape>
+                    <local:TemplatedItemView x:Name="templatedItemView" 
+                                             Grid.Column="0"
+                                             Grid.Row="1"
+                                             Item="{Binding ChartData}"
+                                             ItemTemplate="{StaticResource chartTemplateSelector}" />
+                </Border>
+
+            </Grid>
+        </Grid>
+
+    </Grid>
+    
+</ContentPage>

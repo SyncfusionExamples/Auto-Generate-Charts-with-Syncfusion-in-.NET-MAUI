@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:chart="clr-namespace:Syncfusion.Maui.Toolkit.Charts;assembly=Syncfusion.Maui.Toolkit"
+                    xmlns:local="clr-namespace:ChartGenerator"
+                    x:Class="ChartGenerator.SeriesTemplates">
+
+    <ResourceDictionary>
+        <x:Array x:Key="PaletteBrushesCollection" Type="{x:Type Brush}">
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#30356D" Offset="0.0" />
+                <GradientStop Color="#C0C5FF" Offset="1.0" />
+            </LinearGradientBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#4AFBFF" Offset="0.0" />
+                <GradientStop Color="#CFFEFF" Offset="1.0" />
+            </LinearGradientBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#0FC6F4" Offset="0.0" />
+                <GradientStop Color="#A9EEFF" Offset="1.0" />
+            </LinearGradientBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#2C8BB9" Offset="0.0" />
+                <GradientStop Color="#8AC5E1" Offset="1.0" />
+            </LinearGradientBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#2E5F99" Offset="0.0" />
+                <GradientStop Color="#67A6F0" Offset="1.0" />
+            </LinearGradientBrush>
+        </x:Array>
+
+        <x:Array x:Key="RadialbarCollection" Type="{x:Type Brush}">
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#9215F3" Offset="0.0" />
+                <GradientStop Color="#C789F8" Offset="1.0" />
+            </LinearGradientBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#E2227E" Offset="0.0" />
+                <GradientStop Color="#FB67AE" Offset="1.0" />
+            </LinearGradientBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#FF4E4E" Offset="0.0" />
+                <GradientStop Color="#FF7272" Offset="1.0" />
+            </LinearGradientBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#2196F3" Offset="0.0" />
+                <GradientStop Color="#77C2FD" Offset="1.0" />
+            </LinearGradientBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#F4890B" Offset="0.0" />
+                <GradientStop Color="#FEC179" Offset="1.0" />
+            </LinearGradientBrush>
+        </x:Array>
+    </ResourceDictionary>
+
+    <DataTemplate x:Key="lineSeriesTemplate">
+        <chart:LineSeries ItemsSource="{Binding DataSource}"
+                          XBindingPath="xvalue"
+                          YBindingPath="yvalue"
+                          EnableTooltip="{Binding Tooltip}"
+                          Label="{Binding Type}"
+                          StrokeWidth="2.5"
+                          ShowMarkers="True"
+                          Fill="#1E90FF"
+                          EnableAnimation="True">
+            <chart:LineSeries.MarkerSettings>
+                <chart:ChartMarkerSettings Fill="SkyBlue" 
+                                           Stroke="RoyalBlue" 
+                                           StrokeWidth="2" />
+            </chart:LineSeries.MarkerSettings>
+        </chart:LineSeries>
+    </DataTemplate>
+
+    <DataTemplate x:Key="splineSeriesTemplate">
+        <chart:SplineSeries ItemsSource="{Binding DataSource}"
+                          XBindingPath="xvalue"
+                          YBindingPath="yvalue"
+                          EnableTooltip="{Binding Tooltip}"
+                          Label="{Binding Type}"
+                          StrokeWidth="2.5"
+                          ShowMarkers="True"
+                          Fill="#8A2BE2"
+                          EnableAnimation="True">
+            <chart:SplineSeries.MarkerSettings>
+                <chart:ChartMarkerSettings Fill="#9370DB" 
+                                           Stroke="#663399" 
+                                           StrokeWidth="2" />
+            </chart:SplineSeries.MarkerSettings>
+        </chart:SplineSeries>
+    </DataTemplate>
+
+    <DataTemplate x:Key="columnSeriesTemplate">
+        <chart:ColumnSeries ItemsSource="{Binding DataSource}"
+                            XBindingPath="xvalue"
+                            YBindingPath="yvalue"
+                            CornerRadius="15"
+                            Label="{Binding Type}"
+                            EnableTooltip="{Binding Tooltip}"
+                            EnableAnimation="True">
+            <chart:ColumnSeries.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#F9465E" Offset="0.0" />
+                    <GradientStop Color="#FFA3AE" Offset="1.0" />
+                </LinearGradientBrush>
+            </chart:ColumnSeries.Fill>
+        </chart:ColumnSeries>
+    </DataTemplate>
+
+    <DataTemplate x:Key="areaSeriesTemplate">
+        <chart:AreaSeries ItemsSource="{Binding DataSource}"
+                          XBindingPath="xvalue"
+                          YBindingPath="yvalue"
+                          Opacity=".8"
+                          Label="{Binding Type}"
+                          EnableTooltip="{Binding Tooltip}"
+                          EnableAnimation="True">
+            <chart:AreaSeries.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#7FCEC5" Offset="0.0" />
+                    <GradientStop Color="LightSeaGreen" Offset="1.0" />
+                </LinearGradientBrush>
+            </chart:AreaSeries.Fill>
+        </chart:AreaSeries>
+    </DataTemplate>
+
+    <DataTemplate x:Key="pieSeriesTemplate">
+        <chart:PieSeries ItemsSource="{Binding DataSource}"
+                         XBindingPath="xvalue"
+                         YBindingPath="yvalue"
+                         EnableTooltip="{Binding Tooltip}"
+                         PaletteBrushes="{StaticResource PaletteBrushesCollection}"
+                         EnableAnimation="True">
+        </chart:PieSeries>
+    </DataTemplate>
+
+    <DataTemplate x:Key="doughnutSeriesTemplate">
+        <chart:DoughnutSeries ItemsSource="{Binding DataSource}"
+                              XBindingPath="xvalue"
+                              YBindingPath="yvalue"
+                              ExplodeAll="True"
+                              EnableTooltip="{Binding Tooltip}"
+                              PaletteBrushes="{StaticResource PaletteBrushesCollection}"
+                              EnableAnimation="True"/>
+    </DataTemplate>
+
+    <DataTemplate x:Key="radialBarSeriesTemplate">
+        <chart:RadialBarSeries ItemsSource="{Binding DataSource}"
+                               XBindingPath="xvalue"
+                               YBindingPath="yvalue"
+                               CapStyle="BothCurve"
+                               EnableTooltip="{Binding Tooltip}" 
+                               PaletteBrushes="{StaticResource RadialbarCollection}"
+                               EnableAnimation="True" />
+    </DataTemplate>
+
+    <local:SeriesTemplateSelector x:Key="seriesTemplateSelector"
+                                  LineSeriesTemplate="{StaticResource lineSeriesTemplate}"
+                                  SplineSeriesTemplate="{StaticResource splineSeriesTemplate}"
+                                  ColumnSeriesTemplate="{StaticResource columnSeriesTemplate}"
+                                  AreaSeriesTemplate="{StaticResource areaSeriesTemplate}"
+                                  PieSeriesTemplate="{StaticResource pieSeriesTemplate}"
+                                  DoughnutSeriesTemplate="{StaticResource doughnutSeriesTemplate}"
+                                  RadialBarSeriesTemplate="{StaticResource radialBarSeriesTemplate}" />
+
+</ResourceDictionary>
