@@ -20,17 +20,17 @@ Syncfusion .NET MAUI Charts provide a robust set of tools for creating visually 
 ## Why Auto-Generated Charts?
 Creating a professional chart UI often involves a significant amount of design and coding effort. However, this application offers:
  
-### Ease of Use: Developers and users can focus on their data instead of spending hours on UI design.
+**Ease of Use:** Developers and users can focus on their data instead of spending hours on UI design.
  
-### Time-Saving: Charts are generated dynamically from JSON input, minimizing manual effort.
+**Time-Saving:** Charts are generated dynamically from JSON input, minimizing manual effort.
  
-### Flexibility: The application supports multiple chart types and adapts to different data structures effortlessly.
+**Flexibility:** The application supports multiple chart types and adapts to different data structures effortlessly.
  
 With these features, this application is a game-changer for anyone looking to quickly visualize data without compromising on quality.
 
 In this demo, let's explore how this application saves time, enhances productivity, and simplifies the chart-building process.
 
-
+![Presentation1we](https://github.com/user-attachments/assets/0a0bead2-d495-4243-b6dc-6015521a99c5)
 
 
 ## Troubleshooting
