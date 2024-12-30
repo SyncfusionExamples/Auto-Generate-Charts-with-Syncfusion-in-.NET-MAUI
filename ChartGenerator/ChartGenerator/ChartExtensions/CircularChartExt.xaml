@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<chart:SfCircularChart xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:chart="clr-namespace:Syncfusion.Maui.Toolkit.Charts;assembly=Syncfusion.Maui.Toolkit"
+                       xmlns:local="clr-namespace:ChartGenerator"
+                       x:Class="ChartGenerator.CircularChartExt"
+                       Title="{Binding Title}"
+                       Source="{Binding Series}" >
+
+    <chart:SfCircularChart.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <local:SeriesTemplates />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </chart:SfCircularChart.Resources>
+
+    <chart:SfCircularChart.Legend>
+        <chart:ChartLegend Placement="Right" ToggleSeriesVisibility="True"/>
+    </chart:SfCircularChart.Legend>
+
+</chart:SfCircularChart>
