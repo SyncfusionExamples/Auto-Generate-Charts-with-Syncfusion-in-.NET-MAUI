@@ -11,7 +11,7 @@ namespace ChartGenerator
         private string? entryText;
         private ContentView? chart;
         private bool showAssistView;
-        private ChartConfig chartData;
+        private ChartConfig? chartData;
 
         public string? EntryText
         {
@@ -43,7 +43,7 @@ namespace ChartGenerator
             }
         }
 
-        public ChartConfig ChartData
+        public ChartConfig? ChartData
         {
             get => chartData;
             set
@@ -73,7 +73,7 @@ namespace ChartGenerator
             {
                 DecryptJSON(EntryText);
 
-                Application.Current.MainPage.Navigation.PushAsync(new ChartView(this));
+                await Application.Current.MainPage.Navigation.PushAsync(new ChartView(this));
             }
             else
             {

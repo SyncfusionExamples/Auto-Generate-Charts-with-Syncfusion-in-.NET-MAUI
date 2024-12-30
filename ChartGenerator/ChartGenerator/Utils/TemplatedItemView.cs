@@ -2,6 +2,7 @@
 {
     internal class TemplatedItemView : ContentView
     {
+        private readonly ContentView contentView;
         public bool HideOnNullContent { get; set; } = false;
 
         #region Binable properties
@@ -24,9 +25,11 @@
             get => (object)GetValue(ItemProperty);
             set => SetValue(ItemProperty, value);
         }
+
         #endregion
 
-        private readonly ContentView contentView;
+        #region Constructor
+
         public TemplatedItemView()
         {
             var grid = new Grid();
@@ -34,7 +37,9 @@
             grid.Children.Add(contentView);
 
             this.Content = grid;
-        }
+        } 
+
+        #endregion
 
         #region Methods
 

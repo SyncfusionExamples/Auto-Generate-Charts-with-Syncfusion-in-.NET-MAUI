@@ -7,10 +7,10 @@ namespace ChartGenerator;
 public class ChartConfig : INotifyPropertyChanged
 {
     private ChartEnums.ChartTypeEnum chartType;
-    private string title;
-    private Axes xAxis;
-    private Axes yAxis;
-    private ObservableCollection<SeriesConfig> series;
+    private string? title;
+    private Axes? xAxis;
+    private Axes? yAxis;
+    private ObservableCollection<SeriesConfig>? series;
 
     public ChartEnums.ChartTypeEnum ChartType
     {
@@ -25,7 +25,7 @@ public class ChartConfig : INotifyPropertyChanged
         }
     }
 
-    public string Title
+    public string? Title
     {
         get => title;
         set
@@ -38,7 +38,7 @@ public class ChartConfig : INotifyPropertyChanged
         }
     }
 
-    public Axes XAxis
+    public Axes? XAxis
     {
         get => xAxis;
         set
@@ -51,7 +51,7 @@ public class ChartConfig : INotifyPropertyChanged
         }
     }
 
-    public Axes YAxis
+    public Axes? YAxis
     {
         get => yAxis;
         set
@@ -64,7 +64,7 @@ public class ChartConfig : INotifyPropertyChanged
         }
     }
 
-    public ObservableCollection<SeriesConfig> Series
+    public ObservableCollection<SeriesConfig>? Series
     {
         get => series;
         set
@@ -77,7 +77,7 @@ public class ChartConfig : INotifyPropertyChanged
         }
     }
 
-    public event PropertyChangedEventHandler PropertyChanged;
+    public event PropertyChangedEventHandler? PropertyChanged;
     protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

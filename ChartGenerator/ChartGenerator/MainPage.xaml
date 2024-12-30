@@ -4,8 +4,7 @@
              xmlns:local="clr-namespace:ChartGenerator"
              xmlns:button="clr-namespace:Syncfusion.Maui.Toolkit.Buttons;assembly=Syncfusion.Maui.Toolkit"
              x:Class="ChartGenerator.MainPage"
-             Background="{StaticResource backgroundGradient}"
-             >
+             Background="{StaticResource backgroundGradient}">
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -38,6 +37,7 @@
                   Margin="0,20,0,0" 
                   VerticalOptions="FillAndExpand"
                   HorizontalOptions="FillAndExpand">
+                
                 <Label Text="Chart Generator" 
                        FontSize="32" Grid.Row="0"
                        HorizontalOptions="Start" 
@@ -73,12 +73,12 @@
                   RowSpacing="20" HorizontalOptions="Center" VerticalOptions="Center">
                
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="40" />
-                    <RowDefinition Height="40" />
-                    <RowDefinition Height="40" />
-                    <RowDefinition Height="40" />
-                    <RowDefinition Height="40" />
-                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
                 </Grid.RowDefinitions>
 
                 <button:SfButton x:Name="barButton"

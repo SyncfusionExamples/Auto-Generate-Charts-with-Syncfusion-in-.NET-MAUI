@@ -10,13 +10,13 @@ public class SeriesConfig
         set;
     }
 
-    public string XPath
+    public string? XPath
     {
         get;
         set;
     }
 
-    public ObservableCollection<DataModel> DataSource 
+    public ObservableCollection<DataModel>? DataSource 
     {
         get; 
         set;
@@ -31,7 +31,7 @@ public class SeriesConfig
 
 public class DataModel
 {
-    public string xvalue
+    public string? xvalue
     {
         get; 
         set;
