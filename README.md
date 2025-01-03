@@ -37,4 +37,4 @@ In this demo, let's explore how this application saves time, enhances productivi
 ### Path too long exception
 If you are facing path too long exception when building this example project, close Visual Studio and rename the repository to short and build the project. 
 
-For a step-by-step procedure, refer to the [Transform JSON into Stunning Charts: Auto-Generate Visuals with Syncfusion .NET MAUI Toolkit Blog]().
+For a step-by-step procedure, refer to the [Transform JSON into Stunning Charts: Auto-Generate Visuals with Syncfusion .NET MAUI Toolkit Blog](https://www.syncfusion.com/blogs/post/json-input-to-chart-with-maui-toolkit).
